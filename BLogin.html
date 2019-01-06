@@ -1,0 +1,210 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<style>
+    h1{
+padding:70px 0;
+text-align:centre;
+}
+
+p{
+padding:40px 0;
+text-align:centre;
+}
+
+#text{
+height:42px;
+width:600px;
+}
+
+#btn{
+height:42px;
+width:300px;
+}
+
+
+</style>
+
+<script>
+
+
+    /*if (typeof web3 !== 'undefined') {
+        web3 = new Web3(web3.currentProvider);
+    }
+    else {
+        // set the provider you want from Web3.providers
+        web3.setProvider(new Web3.providers.HTTPProvider('http://localhost:8545'));
+    }
+
+    var EthereumSession = web3.eth.contract([
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "a3",
+                    "type": "address"
+                }
+            ],
+            "name": "setAddress",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [
+                {
+                    "name": "add",
+                    "type": "address"
+                }
+            ],
+            "name": "check",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [
+                {
+                    "name": "a2",
+                    "type": "address"
+                }
+            ],
+            "name": "CheckforTransaction",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        }
+    ]);
+
+    var ethereumSessionInstance = EthereumSession.at("0xee26622b7bbe4dd7e0aa55ff546a657173e3f4e5");
+
+
+    web3.eth.defaultAccount = web3.eth.accounts[0];
+
+
+    ethereumSessionInstance.setaddress("0xee26622b7bbe4dd7e0aa55ff546a657173e3f4e5");
+
+    console.log(ethereumSessionInstance.CheckforTransaction());
+
+    console.log(ethereumSessionInstance.check());*/
+
+    var provider = new Web3(provider.HttpProvider("http://localhost:9545"))
+
+    var EthereumSessionTruffle = TruffleContract({
+        abi: [
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "name": "a3",
+                        "type": "address"
+                    }
+                ],
+                "name": "setAddress",
+                "outputs": [],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "constant": true,
+                "inputs": [
+                    {
+                        "name": "add",
+                        "type": "address"
+                    }
+                ],
+                "name": "check",
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "constant": true,
+                "inputs": [
+                    {
+                        "name": "a2",
+                        "type": "address"
+                    }
+                ],
+                "name": "CheckforTransaction",
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            }
+        ]
+    });
+
+    EthereumSessionTruffle.setProvider(provider);
+    var esTruffleInstance = null;
+    EthereumSessionTruffle.at("0x3bd535d54e0237b48eb891a8bedd0fbdca06843b").then(instance => {
+        esTruffleInstance = instance;
+        console.log(instance);
+        return instance.setAddress("0xea1d45e62bf6070c91710d8227b92e1d09ca31f8");
+    }).then(function () {
+        return esTruffleInstance.check()
+            .then(function () {
+                return esTruffleInstance.CheckforTransaction();
+            });
+    }).then(result => { console.log(result); });
+</script>
+
+<script>
+    function login() {
+        location.replace("BSearchPage.html")
+    }
+</script>
+
+<scipt src="\node_modules\web3\dist\web3.js" type="text/javascript">
+</script>
+
+<body background="backimg.png">
+
+
+
+    <center>
+        <h1 style="font-family:monotype corsiva;">
+            <font color="#fff096">Login Page</font>
+        </h1>
+        <hr>
+        <br>
+        <font color="#fff096">Enter Your Blockchain Address</font><br><br>
+        <br><input type="text" id="text" value="" placeholder="Address goes here......"><br><br>
+
+        <br><button type="submit" id="btn" class="btn" onclick="login()" style="font-family:open sans;">Login</button><br><br>
+        <hr>
+
+    </center>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Add icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+  body {font-family: Arial, Helvetica, sans-serif;
+
+padding:50px 0;
+text-align:center;
+
+}
+* {box-sizing: border-box;}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 37%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+</style>
+
+<script>
+
+  function Account() {
+
+    location.replace("BNoAccess.html")
+
+  }
+
+</script>
+
+<body background="backimg.png">
+
+  <form action="/action_page.php" style="max-width:500px;margin:auto">
+    <center>
+      <img src="thumbnail.png">
+      <h1 style="font-family:monotype corsiva;">
+        <font color="#fff096">B'Music</font>
+      </h1>
+    </center>
+    <div class="input-container">
+      <i class="fa fa-music icon"></i>
+      <input class="input-field" type="text" placeholder="Track Name" name="usrnm">
+    </div>
+
+    <div class="input-container">
+      <i class="fa fa-podcast icon"></i>
+      <input class="input-field" type="text" placeholder="Artist" name="usrnm">
+    </div>
+
+    <div class="input-container">
+      <i class="fa fa-list-alt icon"></i>
+      <input class="input-field" type="text" placeholder="Album" name="usrnm">
+    </div>
+  </form>
+
+
+  <button type="submit" id="btn" class="btn" onclick="Account()">Search<i class="fa fa-search icon"></i></button>
+
+
+</body>
+
+</html>
