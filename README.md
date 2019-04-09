@@ -1,7 +1,6 @@
 # BMusic
 
 ## Description
-A System that uses the concept of blockchains to facilitate unique and authentic transactions in the field of music, primarily aiming to protect artists' revenues and intellectual rights.
 Basically this application takes the user to the login page where the address hash is entered and verified. After verifying, user is able to search the desired song. If song is availabe then using the smart contract, user can buy the song and stream it on demand.
 If the song is already purchased by the buyer, then a prompt is given indicating as such.
 
